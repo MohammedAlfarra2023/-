@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Tag Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/25a925b557.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section id="sec">
+        <input id="input" type="text" placeholder="Name">
+        <button id="btn">Generate Name Tag</button>
+        <button id="clear">clear All</button>
+    </section>
+
+
+
+    <script>
+        // function1
+        function Genarte(name) {
+            var Sec = document.getElementById('sec');
+            var Container = document.createElement('div');
+            var nameTag = document.createElement('name');
+            var deleteIcon = document.createElement('i');
+            deleteIcon.classList.add('fa-xmark');
+            Container.appendChild(nameTag);
+            Container.appendChild(deleteIcon);
+
+            Sec.appendChild(Container);
+
+        }
+        Genarte('mohammed');
+        // Function 2
+        var Btn = document.getElementById('btn');
+        function generateName() {
+            var Sec = document.getElementById('sec');
+            var Input = document.getElementById('input');
+            var nameTag = document.createElement('name');
+            var deleteIcon = document.createElement('i');
+            nameTag.innerHTML = Input.value;
+            Sec.innerHTML = Input.value;
+        }
+        function DeleteIcon() {
+            var nameTag = document.createElement('name');
+                nameTag.style.display = "none";    
+        }
+        var deleteIcon = document.createElement('i');
+        Btn.addEventListener('click' , generateName);
+        deleteIcon.addEventListener('click' , DeleteIcon);
+
+        var Clear = document.getElementById('clear');
+        Clear.onclick = function(){
+            var Sec = document.getElementById('sec');
+            Sec.style.display = 'none';
+
+        }
+
+    </script>
+</body>
+
+</html>
